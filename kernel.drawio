@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-03-24T14:25:53.780Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="BUaq-rdfuBvWIFIjKB9U" version="24.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2024-04-07T03:48:22.422Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="XIwS0A9buKmpkD_JbgI2" version="24.2.2" type="github" pages="2">
   <diagram name="第 1 页" id="lusD07U8qm4CnRnHMBhV">
-    <mxGraphModel dx="791" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="954" dy="518" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -28,6 +28,69 @@
         </mxCell>
         <mxCell id="HgZsM_6zQbQMxV9CHbU4-34" value="Item 3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="HgZsM_6zQbQMxV9CHbU4-31" vertex="1">
           <mxGeometry y="90" width="140" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="jq6SIGFgMDeIeVyOXHnD" name="第 2 页">
+    <mxGraphModel dx="1139" dy="534" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Sjt32iYKYMUaoXS-1Ko6-1" value="type Module struct {&#xa;    obj      *C.struct_bpf_object&#xa;    links    []*BPFLink&#xa;    perfBufs []*PerfBuffer&#xa;    ringBufs []*RingBuffer&#xa;    elf      *elf.File&#xa;    loaded   bool&#xa;}" style="text;whiteSpace=wrap;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="64" y="216" width="201" height="128" as="geometry" />
+        </mxCell>
+        <mxCell id="Sjt32iYKYMUaoXS-1Ko6-2" value="type BPFProg struct {&#xa;    prog       *C.struct_bpf_program&#xa;    module     *Module&#xa;    pinnedPath string&#xa;}" style="text;whiteSpace=wrap;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="367" y="35" width="245" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="Sjt32iYKYMUaoXS-1Ko6-3" value="type BPFMap struct {&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;bpfMap    *C.struct_bpf_map&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;bpfMapLow *BPFMapLow&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;module    *Module&#xa;}" style="text;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="377" y="162" width="207" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="Sjt32iYKYMUaoXS-1Ko6-4" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;entryX=0.004;entryY=0.17;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="Sjt32iYKYMUaoXS-1Ko6-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="266" y="239" as="sourcePoint" />
+            <mxPoint x="316" y="189" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sjt32iYKYMUaoXS-1Ko6-5" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;entryX=0;entryY=0.149;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="Sjt32iYKYMUaoXS-1Ko6-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="265" y="241" as="sourcePoint" />
+            <mxPoint x="315" y="191" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sjt32iYKYMUaoXS-1Ko6-6" value="type PerfBuffer struct {&#xa;pb         *C.struct_perf_buffer&#xa;bpfMap     *BPFMap&#xa;slot       uint&#xa;eventsChan chan []byte&#xa;lostChan   chan uint64&#xa;stop       chan struct{}&#xa;closed     bool&#xa;wg         sync.WaitGroup&#xa;}" style="text;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="442" y="315" width="182" height="166" as="geometry" />
+        </mxCell>
+        <mxCell id="Sjt32iYKYMUaoXS-1Ko6-7" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;entryX=0;entryY=0.072;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="Sjt32iYKYMUaoXS-1Ko6-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="264" y="273" as="sourcePoint" />
+            <mxPoint x="314" y="223" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Sjt32iYKYMUaoXS-1Ko6-8" value="type BPFMap struct {&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;bpfMap    *C.struct_bpf_map&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;bpfMapLow *BPFMapLow&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;module    *Module&#xa;}" style="text;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="417" y="183" width="207" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="Sjt32iYKYMUaoXS-1Ko6-9" value="type BPFMap struct {&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;bpfMap    *C.struct_bpf_map&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;bpfMapLow *BPFMapLow&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;module    *Module&#xa;}" style="text;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="448" y="202" width="207" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="Sjt32iYKYMUaoXS-1Ko6-10" value="type BPFProg struct {&#xa;    prog       *C.struct_bpf_program&#xa;    module     *Module&#xa;    pinnedPath string&#xa;}" style="text;whiteSpace=wrap;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="410" y="51" width="245" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="Sjt32iYKYMUaoXS-1Ko6-11" value="type BPFProg struct {&#xa;    prog       *C.struct_bpf_program&#xa;    module     *Module&#xa;    pinnedPath string&#xa;}" style="text;whiteSpace=wrap;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="453" y="65" width="245" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="Sjt32iYKYMUaoXS-1Ko6-13" value="type BPFLink struct {&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;link      *C.struct_bpf_link&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;prog      *BPFProg&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;linkType  LinkType&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;eventName string&#xa;&lt;span style=&quot;white-space: pre;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;legacy    *bpfLinkLegacy // if set, this is a fake BPFLink&#xa;}" style="text;whiteSpace=wrap;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="56" y="375" width="341" height="116" as="geometry" />
+        </mxCell>
+        <mxCell id="Sjt32iYKYMUaoXS-1Ko6-14" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="Sjt32iYKYMUaoXS-1Ko6-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="59" y="266" as="sourcePoint" />
+            <mxPoint x="109" y="216" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="29" y="282" />
+              <mxPoint x="16" y="319" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
