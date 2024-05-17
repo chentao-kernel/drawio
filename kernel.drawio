@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-17T05:41:48.181Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="Tx_frrmCnvK3whPbNis7" version="24.3.1" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2024-05-17T07:00:57.731Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="QE1izt4rmWWvb9B0K3Jd" version="24.3.1" type="github" pages="2">
   <diagram id="jq6SIGFgMDeIeVyOXHnD" name="第 2 页">
     <mxGraphModel dx="1309" dy="587" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -24,8 +24,8 @@
         <mxCell id="xdMaiT-jXGN7BehSS-hr-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xdMaiT-jXGN7BehSS-hr-10" target="xdMaiT-jXGN7BehSS-hr-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="xdMaiT-jXGN7BehSS-hr-10" value="cgroup_bpf_prog_attach" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="216" y="139" width="148" height="26" as="geometry" />
+        <mxCell id="xdMaiT-jXGN7BehSS-hr-10" value="cgroup_bpf_prog_attach&lt;div&gt;{&lt;/div&gt;&lt;div&gt;// target_fd 为cgroup_id，用户态传入&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;font color=&quot;#ea6b66&quot;&gt;cgrp = cgroup_get_from_fd(attr-&amp;gt;target_fd);&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;}&lt;/b&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
+          <mxGeometry x="166" y="110" width="268" height="84" as="geometry" />
         </mxCell>
         <mxCell id="xdMaiT-jXGN7BehSS-hr-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xdMaiT-jXGN7BehSS-hr-11" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -39,13 +39,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="xdMaiT-jXGN7BehSS-hr-14" value="bpf_prog_attach" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#d6b656;fillColor=#fff2cc;" parent="1" vertex="1">
-          <mxGeometry x="237.5" y="86" width="105" height="26" as="geometry" />
+          <mxGeometry x="252" y="-15" width="105" height="26" as="geometry" />
         </mxCell>
         <mxCell id="xdMaiT-jXGN7BehSS-hr-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xdMaiT-jXGN7BehSS-hr-16" target="xdMaiT-jXGN7BehSS-hr-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="xdMaiT-jXGN7BehSS-hr-16" value="__sys_bpf&lt;div&gt;case BPF_PROG_ATTACH:&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#d6b656;fillColor=#fff2cc;" parent="1" vertex="1">
-          <mxGeometry x="257" y="12" width="168" height="41" as="geometry" />
+          <mxGeometry x="259" y="-131" width="168" height="41" as="geometry" />
         </mxCell>
         <mxCell id="xdMaiT-jXGN7BehSS-hr-18" value="link_create" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
           <mxGeometry x="32" y="130" width="76" height="26" as="geometry" />
@@ -62,14 +62,14 @@
         <mxCell id="xdMaiT-jXGN7BehSS-hr-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xdMaiT-jXGN7BehSS-hr-22" target="xdMaiT-jXGN7BehSS-hr-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="xdMaiT-jXGN7BehSS-hr-22" value="&lt;div&gt;case BPF_PROG_TYPE_CGROUP_SKB:&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_SOCK:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_SOCK_ADDR:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_SOCK_OPS:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_DEVICE:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_SYSCTL:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_SOCKOPT:&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#d79b00;fillColor=#ffe6cc;" parent="1" vertex="1">
-          <mxGeometry x="-374" y="123" width="321" height="113" as="geometry" />
+        <mxCell id="xdMaiT-jXGN7BehSS-hr-22" value="&lt;div&gt;link 取代原来prog attach过程&lt;/div&gt;&lt;div&gt;case BPF_PROG_TYPE_CGROUP_SKB:&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_SOCK:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_SOCK_ADDR:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_SOCK_OPS:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_DEVICE:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_SYSCTL:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_SOCKOPT:&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#d79b00;fillColor=#ffe6cc;" parent="1" vertex="1">
+          <mxGeometry x="-374" y="116" width="321" height="127" as="geometry" />
         </mxCell>
         <mxCell id="xdMaiT-jXGN7BehSS-hr-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xdMaiT-jXGN7BehSS-hr-24" target="xdMaiT-jXGN7BehSS-hr-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="xdMaiT-jXGN7BehSS-hr-24" value="&lt;div&gt;case BPF_PROG_TYPE_CGROUP_DEVICE:&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_SKB:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_SOCK:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_SOCK_ADDR:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_SOCKOPT:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_CGROUP_SYSCTL:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_SOCK_OPS:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;case BPF_PROG_TYPE_LSM:&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#82b366;fillColor=#d5e8d4;" parent="1" vertex="1">
-          <mxGeometry x="414" y="76" width="321" height="127" as="geometry" />
+          <mxGeometry x="530" y="90" width="321" height="127" as="geometry" />
         </mxCell>
         <mxCell id="xdMaiT-jXGN7BehSS-hr-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="xdMaiT-jXGN7BehSS-hr-26" target="xdMaiT-jXGN7BehSS-hr-27" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -119,6 +119,15 @@
           <mxGeometry x="873" y="123" width="378" height="113" as="geometry" />
         </mxCell>
         <mxCell id="hHc6sv8boMFrpVcW2uYS-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.002;entryY=0.9;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="hHc6sv8boMFrpVcW2uYS-1" target="xdMaiT-jXGN7BehSS-hr-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SGy2pDAQlDbALKZ1d_JS-1" value="&lt;div&gt;// bpftool 工具中获取cgroup_fd&lt;/div&gt;&lt;div&gt;static int do_attach(int argc, char **argv)&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;。。。&lt;/div&gt;&lt;div&gt;cgroup_fd = open(argv[0], O_RDONLY);&lt;/div&gt;&lt;div&gt;prog_fd = prog_parse_fd(&amp;amp;argc, &amp;amp;argv);&lt;br&gt;&lt;/div&gt;&lt;div&gt;(bpf_prog_attach(prog_fd, cgroup_fd, attach_type, attach_flags)&lt;br&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#9673a6;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="539" y="-269" width="358" height="127" as="geometry" />
+        </mxCell>
+        <mxCell id="IXGsCLxgpHC5GRfk-l2Y-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.536;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="SGy2pDAQlDbALKZ1d_JS-1" target="xdMaiT-jXGN7BehSS-hr-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IXGsCLxgpHC5GRfk-l2Y-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.131;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;" edge="1" parent="1" source="SGy2pDAQlDbALKZ1d_JS-1" target="xdMaiT-jXGN7BehSS-hr-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
