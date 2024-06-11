@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-11T07:37:46.754Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="kwx8k5Ht8whgZr_qt4Bb" version="24.5.2" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2024-06-11T11:49:07.852Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="GEjvNWugeyPGn5Rbhe0R" version="24.5.2" type="github" pages="5">
   <diagram id="UaPmwZCsvPBbYXTNr_Vi" name="ebpf-cgroup">
     <mxGraphModel dx="2723" dy="2989" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -326,7 +326,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="A3bHlVuWiHpmHa_kE2bq" name="group">
-    <mxGraphModel dx="1747" dy="1632" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2293" dy="1702" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -417,6 +417,9 @@
         </mxCell>
         <mxCell id="sDOeRZ461oOv64WBTFP6-5" value="void init_cfs_bandwidth(struct cfs_bandwidth *cfs_b)&lt;br&gt;{&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;raw_spin_lock_init(&amp;amp;cfs_b-&amp;gt;lock);&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cfs_b-&amp;gt;runtime = 0;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cfs_b-&amp;gt;quota = RUNTIME_INF;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cfs_b-&amp;gt;period = ns_to_ktime(default_cfs_period());&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cfs_b-&amp;gt;burst = 0;&lt;br&gt;&lt;br&gt;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;INIT_LIST_HEAD(&amp;amp;cfs_b-&amp;gt;throttled_cfs_rq);&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;hrtimer_init(&amp;amp;cfs_b-&amp;gt;period_timer, CLOCK_MONOTONIC, HRTIMER_MODE_ABS_PINNED);&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cfs_b-&amp;gt;period_timer.function = &lt;b&gt;sched_cfs_period_timer&lt;/b&gt;;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;hrtimer_init(&amp;amp;cfs_b-&amp;gt;slack_timer, CLOCK_MONOTONIC, HRTIMER_MODE_REL);&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cfs_b-&amp;gt;slack_timer.function = &lt;b&gt;sched_cfs_slack_timer&lt;/b&gt;;&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cfs_b-&amp;gt;slack_started = false;&lt;br&gt;}" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#d79b00;fillColor=#ffe6cc;" parent="1" vertex="1">
           <mxGeometry x="1299" y="176" width="531" height="242" as="geometry" />
+        </mxCell>
+        <mxCell id="8EVra29IyB7NmzETxZ23-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="sDOeRZ461oOv64WBTFP6-6" target="8EVra29IyB7NmzETxZ23-29">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="sDOeRZ461oOv64WBTFP6-6" value="do_sched_cfs_slack_timer" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontStyle=1;fontColor=#333333;" parent="1" vertex="1">
           <mxGeometry x="1348" y="455" width="159" height="26" as="geometry" />
@@ -539,6 +542,12 @@
               <mxPoint x="402" y="-420" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="8EVra29IyB7NmzETxZ23-29" value="void __refill_cfs_bandwidth_runtime(struct cfs_bandwidth *cfs_b)&lt;div&gt;{&lt;/div&gt;&lt;div&gt;// 重新分配时间&lt;/div&gt;&lt;div&gt;cfs_b-&amp;gt;runtime += cfs_b-&amp;gt;quota;&lt;br&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#9673a6;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="1213" y="524" width="363" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="8EVra29IyB7NmzETxZ23-31" value="&lt;div&gt;// 返还部分cpu时间&lt;/div&gt;return_cfs_rq_runtime(cfs_rq);" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="648" y="-378" width="179" height="41" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
