@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-06-12T16:07:22.118Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="PeXf1DFyQO_5JI9dZy_6" version="24.5.3" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2024-06-15T06:45:12.119Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="HrVfiYUJk7OYaLTe4JRg" version="24.5.4" type="github" pages="5">
   <diagram id="UaPmwZCsvPBbYXTNr_Vi" name="ebpf-cgroup">
     <mxGraphModel dx="2723" dy="2989" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -550,8 +550,11 @@
         <mxCell id="8EVra29IyB7NmzETxZ23-31" value="&lt;div&gt;// 返还部分cpu时间&lt;/div&gt;return_cfs_rq_runtime(cfs_rq);" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="648" y="-378" width="179" height="41" as="geometry" />
         </mxCell>
-        <mxCell id="D0SYFf5ptEaM6tQz5fO6-2" value="sched_avg在task_group、cfs_rq、sched_entity&lt;div&gt;三个结构中都存在&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#82b366;fillColor=#d5e8d4;" vertex="1" parent="1">
+        <mxCell id="D0SYFf5ptEaM6tQz5fO6-2" value="sched_avg在task_group、cfs_rq、sched_entity&lt;div&gt;三个结构中都存在&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#82b366;fillColor=#d5e8d4;" parent="1" vertex="1">
           <mxGeometry x="730" y="439.5" width="271" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="4Nd2-YfP56yYEw6Zr07a-1" value="&lt;b&gt;struct cfs_rq &lt;/b&gt;{&lt;div&gt;struct load_weight load;&lt;/div&gt;&lt;div&gt;struct sched_avg avg;&lt;/div&gt;&lt;div&gt;long&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&#x9;&#x9;&lt;/span&gt;prop_runnable_sum;&lt;br&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-194" y="1000" width="208" height="84" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
