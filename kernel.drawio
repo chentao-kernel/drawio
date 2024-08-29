@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-08-29T06:49:09.738Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="8QuxaZ6SDZhN_S7dOKb4" version="24.5.2" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2024-08-29T07:29:56.597Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="SAuDp3sCuFZWPNGdsHHQ" version="24.5.2" type="github" pages="6">
   <diagram id="UaPmwZCsvPBbYXTNr_Vi" name="ebpf-cgroup">
     <mxGraphModel dx="2723" dy="2989" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -654,12 +654,15 @@
     </mxGraphModel>
   </diagram>
   <diagram id="kP0fQv4rSRyjaTg57-7_" name="retsnoop">
-    <mxGraphModel dx="1944" dy="683" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1944" dy="1852" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="0qgzBngcQ8B3zcPTSY4L-1" value="SEC(&quot;kprobe&quot;)&lt;div&gt;int kentry(struct pt_regs *ctx)&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#82b366;fillColor=#d5e8d4;" vertex="1" parent="1">
           <mxGeometry x="-37" y="200" width="171" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="0qgzBngcQ8B3zcPTSY4L-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0qgzBngcQ8B3zcPTSY4L-2" target="0qgzBngcQ8B3zcPTSY4L-9">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="0qgzBngcQ8B3zcPTSY4L-2" value="handle_func_entry(ctx, id, ip);" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
           <mxGeometry x="96" y="259" width="175" height="26" as="geometry" />
@@ -670,15 +673,48 @@
         <mxCell id="0qgzBngcQ8B3zcPTSY4L-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0qgzBngcQ8B3zcPTSY4L-4" target="0qgzBngcQ8B3zcPTSY4L-5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="31" y="447" />
+              <mxPoint x="12" y="559" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="0qgzBngcQ8B3zcPTSY4L-4" value="SEC(&quot;kretprobe&quot;)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="-23" y="395" width="110" height="26" as="geometry" />
+          <mxGeometry x="-42" y="507" width="110" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="0qgzBngcQ8B3zcPTSY4L-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0qgzBngcQ8B3zcPTSY4L-5" target="0qgzBngcQ8B3zcPTSY4L-8">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="0qgzBngcQ8B3zcPTSY4L-5" value="int kexit(struct pt_regs *ctx)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#9673a6;fillColor=#e1d5e7;" vertex="1" parent="1">
-          <mxGeometry x="81" y="434" width="163" height="26" as="geometry" />
+          <mxGeometry x="62" y="546" width="163" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="0qgzBngcQ8B3zcPTSY4L-8" value="handle_func_exit(ctx, id, ip, PT_REGS_RC(ctx));" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#d6b656;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="5" y="617" width="277" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="0qgzBngcQ8B3zcPTSY4L-9" value="handle_func_exit(ctx, id, ip, PT_REGS_RC(ctx));" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#d6b656;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="154" y="336" width="277" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="0qgzBngcQ8B3zcPTSY4L-15" value="push_call_stack(void *ctx, u32 id, u64 ip)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#d79b00;fillColor=#ffe6cc;" vertex="1" parent="1">
+          <mxGeometry x="256" y="376" width="235" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="0qgzBngcQ8B3zcPTSY4L-17" value="&lt;div&gt;static bool emit_session_start(void *ctx, struct session *sess)&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; struct session_start *r;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; r = (struct session_start *)reserve_buf(sizeof(*r));&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; if (!r)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; return false;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; r-&amp;gt;type = REC_SESSION_START;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; r-&amp;gt;pid = sess-&amp;gt;pid;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="556" y="142.5" width="341" height="156" as="geometry" />
+        </mxCell>
+        <mxCell id="0qgzBngcQ8B3zcPTSY4L-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="0qgzBngcQ8B3zcPTSY4L-18" target="0qgzBngcQ8B3zcPTSY4L-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0qgzBngcQ8B3zcPTSY4L-18" value="session_start标记trace事件的开始" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="571" y="86" width="199" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="0qgzBngcQ8B3zcPTSY4L-20" value="&lt;div&gt;&lt;b&gt;struct session&lt;/b&gt; {&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;// 当前trace的进程/线程id&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int pid, tgid;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; long start_ts;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; char task_comm[16], proc_comm[16];&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; long scratch; /* for obfuscating pointers to be read as integers */&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; bool defunct;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; bool start_emitted;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;//&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int next_seq_id;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int dropped_records;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;// lbr功能&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; struct perf_branch_entry lbrs[MAX_LBR_ENTRIES];&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; long lbrs_sz;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;// 栈信息记录&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; struct call_stack stack;&lt;/div&gt;&lt;div&gt;};&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#d6b656;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="-21" y="-255" width="383" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="0qgzBngcQ8B3zcPTSY4L-21" value="&lt;div&gt;&lt;b&gt;struct call_stack&lt;/b&gt; {&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;// 函数的ip地址作为唯一标识id记录&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; unsigned short func_ids[MAX_FSTACK_DEPTH];&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;// seq_id自增id记录&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int seq_ids[MAX_FSTACK_DEPTH];&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;// 每个函数的返回结果记录&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; long func_res[MAX_FSTACK_DEPTH];&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;// 每个函数的执行时间记录&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; long func_lat[MAX_FSTACK_DEPTH];&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;//&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; unsigned depth;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; unsigned max_depth;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;// 函数返回是否报错&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; bool is_err;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; unsigned short saved_ids[MAX_FSTACK_DEPTH];&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int saved_seq_ids[MAX_FSTACK_DEPTH];&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; long saved_res[MAX_FSTACK_DEPTH];&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; long saved_lat[MAX_FSTACK_DEPTH];&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; unsigned saved_depth;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; unsigned saved_max_depth;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; long kstack[MAX_KSTACK_DEPTH];&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; long kstack_sz;&lt;/div&gt;&lt;div&gt;};&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#9673a6;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="475" y="-303" width="317" height="372" as="geometry" />
+        </mxCell>
+        <mxCell id="0qgzBngcQ8B3zcPTSY4L-23" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.003;entryY=0.049;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="0qgzBngcQ8B3zcPTSY4L-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="19" as="sourcePoint" />
+            <mxPoint x="410" y="-31" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
