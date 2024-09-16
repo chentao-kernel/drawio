@@ -715,6 +715,9 @@
         <mxCell id="5QhVaLvC5XGWAlMrCR9G-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.002;entryY=0.481;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="0qgzBngcQ8B3zcPTSY4L-8" target="5QhVaLvC5XGWAlMrCR9G-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="5QhVaLvC5XGWAlMrCR9G-6" value="        sess-&gt;scratch = res;&#xa;        barrier_var(res);&#xa;        res = sess-&gt;scratch;&#xa;&#xa;&#xa;        if (flags &amp; FUNC_CANT_FAIL)&#xa;                failed = false;&#xa;        else if ((flags &amp; FUNC_RET_PTR) &amp;&amp; res == 0)&#xa;                /* consider NULL pointer an error as well */&#xa;                failed = true;&#xa;        else if (flags &amp; FUNC_NEEDS_SIGN_EXT)&#xa;                failed = IS_ERR_VALUE32((u32)res);&#xa;        else&#xa;                failed = IS_ERR_VALUE(res);" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="511" y="430" width="308" height="224" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
