@@ -880,6 +880,21 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="GU2asTgXLvHukopVLm36-30" value="__bpf_kfunc s32 scx_bpf_create_dsq(u64 dsq_id, s32 node)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#d6b656;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="-1600" y="-924" width="340" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GU2asTgXLvHukopVLm36-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GU2asTgXLvHukopVLm36-31" target="GU2asTgXLvHukopVLm36-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GU2asTgXLvHukopVLm36-31" value="static struct scx_dispatch_q *&lt;b&gt;create_dsq&lt;/b&gt;(u64 dsq_id, int node)&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;dsq = kmalloc_node(sizeof(*dsq), GFP_KERNEL, node);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;if (!dsq)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&#x9;&lt;/span&gt;return ERR_PTR(-ENOMEM);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;&lt;b&gt;init_dsq(dsq, dsq_id);&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="-1571" y="-862" width="352" height="127" as="geometry" />
+        </mxCell>
+        <mxCell id="GU2asTgXLvHukopVLm36-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.398;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="GU2asTgXLvHukopVLm36-30" target="GU2asTgXLvHukopVLm36-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GU2asTgXLvHukopVLm36-34" value="&lt;div&gt;static void init_dsq(struct scx_dispatch_q *dsq, u64 dsq_id)&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;memset(dsq, 0, sizeof(*dsq));&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;raw_spin_lock_init(&amp;amp;dsq-&amp;gt;lock);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;INIT_LIST_HEAD(&amp;amp;dsq-&amp;gt;list);&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space-collapse: collapse;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&#x9;&lt;/span&gt;&lt;b&gt;dsq-&amp;gt;id = dsq_id;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#9673a6;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="-1545" y="-705" width="332" height="127" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
