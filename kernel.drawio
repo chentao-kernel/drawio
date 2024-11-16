@@ -1015,7 +1015,7 @@
         <mxCell id="7uBrFlxzFZQd6evBSfir-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=345;entryDy=65;entryPerimeter=0;exitX=0.011;exitY=0.252;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;" parent="1" source="GU2asTgXLvHukopVLm36-2" target="7uBrFlxzFZQd6evBSfir-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="q02KUTSSQoyIQzYN1DQe-2" value="*(void **)(kdata + moff) = image + trampoline_start + cfi_get_offset();" style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+        <mxCell id="q02KUTSSQoyIQzYN1DQe-2" value="*(void **)(kdata + moff) = image + trampoline_start + cfi_get_offset();" style="text;whiteSpace=wrap;fillColor=#60a917;strokeColor=#2D7600;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="-1678" y="719" width="392" height="36" as="geometry" />
         </mxCell>
         <mxCell id="q02KUTSSQoyIQzYN1DQe-3" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
@@ -1062,7 +1062,7 @@
         <mxCell id="3qqFyNYut7U2kh2B2Kcf-13" value="image" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="-1169" y="634" width="51" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="3qqFyNYut7U2kh2B2Kcf-14" value="static int bpf_scx_reg(void *kdata, struct bpf_link *link)&#xa;{&#xa;        return scx_ops_enable(kdata, link);&#xa;                   {&#xa;                        scx_ops = *ops; &#xa;                   }&#xa;}" style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+        <mxCell id="3qqFyNYut7U2kh2B2Kcf-14" value="static int bpf_scx_reg(void *kdata, struct bpf_link *link)&#xa;{&#xa;        return scx_ops_enable(kdata, link);&#xa;                   {&#xa;                        scx_ops = *ops; &#xa;                   }&#xa;}" style="text;whiteSpace=wrap;fillColor=#60a917;strokeColor=#2D7600;fontStyle=1;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="-1193" y="698" width="317" height="107" as="geometry" />
         </mxCell>
         <mxCell id="3qqFyNYut7U2kh2B2Kcf-15" value="static struct sched_ext_ops scx_ops;" style="text;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
