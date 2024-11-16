@@ -1054,7 +1054,7 @@
           <mxGeometry x="-1165" y="559" width="49" height="26" as="geometry" />
         </mxCell>
         <mxCell id="3qqFyNYut7U2kh2B2Kcf-9" value="prog2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="-1017" y="554" width="49" height="26" as="geometry" />
+          <mxGeometry x="-1038" y="559" width="49" height="26" as="geometry" />
         </mxCell>
         <mxCell id="3qqFyNYut7U2kh2B2Kcf-12" value="struct sched_ext_ops {&#xa;        s32 (*select_cpu)(struct task_struct *p, s32 prev_cpu, u64 wake_flags);&#xa;        void (*enqueue)(struct task_struct *p, u64 enq_flags);&#xa;        void (*dequeue)(struct task_struct *p, u64 deq_flags);" style="text;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="-1652" y="590" width="433" height="80" as="geometry" />
@@ -1114,7 +1114,28 @@
           <mxGeometry x="-1103" y="550" width="26" height="26" as="geometry" />
         </mxCell>
         <mxCell id="3qqFyNYut7U2kh2B2Kcf-28" value="4" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="-1080" y="663" width="28" height="28" as="geometry" />
+          <mxGeometry x="-1375" y="684" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="3qqFyNYut7U2kh2B2Kcf-29" value="将simple_ops通过map方式与内核共享" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1482" y="554" width="222" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="3qqFyNYut7U2kh2B2Kcf-30" value="kdata指向simple_ops结构体" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1763" y="682" width="168" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="3qqFyNYut7U2kh2B2Kcf-31" value="simple_enqueue 以prog的方式jit完后放在image" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1077" y="543" width="271" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="3qqFyNYut7U2kh2B2Kcf-32" value="5" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-1066" y="660" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="3qqFyNYut7U2kh2B2Kcf-33" value="kdata+moff 指向 simple_ops中的enqueue指针&lt;div&gt;image+trampoline_start执行simple_enqueue的prog&lt;/div&gt;&lt;div&gt;以上 赋值操作将回调函数和eBPF实现的prog关联 上&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1719" y="757" width="295" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="3qqFyNYut7U2kh2B2Kcf-34" value="程序加载后将simple_ops赋值给scx_ops" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1038" y="661" width="231" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="3qqFyNYut7U2kh2B2Kcf-35" value="最终内核中都是访问完成simple_ops赋值后的scx_ops&lt;div&gt;即实现了代码替换&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-1440" y="846" width="303" height="41" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
